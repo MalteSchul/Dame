@@ -1,2 +1,2 @@
 # Dame
-Dame board game to play against monte carlo algorithm
+Play the popular board game "Dame" against the monte-carlo algorithm!
