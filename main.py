@@ -135,6 +135,19 @@ def getPlayerMove():
                     else:
                         fromFieldSelected = False
 
+def getGameSetupFromUser():
+    setup = {}
+    gameMode = ""
+    while gameMode not in ["mvm", "mvp", "pvp"]:
+        print("Choose your game mode. You can choose between 'mvm' (machine vs machine), 'mvp' (machine vs player) and 'pvp' (player vs player).")
+        gameMode = input("Game mode: ")
+    setup.update({"gameMode": gameMode})
+
+    if gameMode == "mvm":
+        print("Choose the time limit for the machine to make a move. The time limit is in seconds. Inputs like '0.7' or '2' are possible.")
+        timeLimit = float(input("Time limit: "))
+        setup.update({"timeLimit": timeLimit})
+
 
 def display(fromFieldSelected=None):
     screen.fill((200, 200, 200))
